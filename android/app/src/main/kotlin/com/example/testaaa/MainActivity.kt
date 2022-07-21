@@ -1,4 +1,4 @@
-package com.example.testaaa
+package com.example.XDJcc
 
 import io.flutter.embedding.android.FlutterActivity
 

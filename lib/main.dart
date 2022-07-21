@@ -4,8 +4,8 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:testaaa/app/global/global.dart';
-import 'package:testaaa/app/router/index.dart';
+import 'package:XDJcc/app/global/global.dart';
+import 'package:XDJcc/app/router/index.dart';
 
 void main() async {
 /* 初始化获取相机列表 */
