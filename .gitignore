@@ -1,4 +1,5 @@
-# .DS_Store  忽略隐藏文件夹  mac不能写进 .gitignore
+.DS_Store 
+#  忽略隐藏文件夹  mac不能写进 .gitignore
 .dart_tool/
 
 .packages
