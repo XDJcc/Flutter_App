@@ -11,7 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
 /* 初始化获取相机列表 */
-  // GlobalData.cameras = await availableCameras();
+  GlobalData.cameras = await availableCameras();
 
   runApp(const MyApp());
 
