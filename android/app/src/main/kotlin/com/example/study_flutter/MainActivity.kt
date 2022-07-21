@@ -1,4 +1,4 @@
-package com.example.XDJcc
+package com.example.study_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 

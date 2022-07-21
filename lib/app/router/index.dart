@@ -1,6 +1,6 @@
 //命名路由传参的固定写法
 import 'package:flutter/material.dart';
-import 'package:XDJcc/app/router/router.dart';
+import 'package:study_flutter/app/router/router.dart';
 
 var onGenerateRoute = (RouteSettings settings) {
   // 统一处理

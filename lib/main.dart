@@ -4,12 +4,14 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:XDJcc/app/global/global.dart';
-import 'package:XDJcc/app/router/index.dart';
+import 'package:study_flutter/app/global/global.dart';
+import 'package:study_flutter/app/router/index.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
 /* 初始化获取相机列表 */
-  GlobalData.cameras = await availableCameras();
+  // GlobalData.cameras = await availableCameras();
 
   runApp(const MyApp());
 
