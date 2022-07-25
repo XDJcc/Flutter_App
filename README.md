@@ -15,12 +15,11 @@
 ```dart
   Navigator.of(context).pushReplacementNamed("/detail",
     arguments: {"id": "replace替换路由切换页面 goods -> detail,goods销毁,detail代替该层级"});
-  Navigator.pushReplacementNamed(context, '/detail',
-    arguments: {"id": "replace替换路由切换页面 goods -> detail,goods销毁,detail代替该层级"});
-
   Navigator.of(context).pushNamed();
   Navigator.of(context).pop();
-  Navigator.of(context).pushReplacementNamed('/transmitTwo');
+  Navigator.of(context).pushAndRemoveUntil(
+    MaterialPageRoute(builder: (context) => const Home()),
+    (route) => false));
 
 ```
 

@@ -6,5 +6,5 @@ import 'package:study_flutter/splash_page/pages/splash_page.dart';
  */
 final Map<String, Function> routes = {
   '/': (context, {arguments}) => const Home(),
-  '/splash': (context, {arguments}) => const SplashPage(),
+  '/splash': (context, {arguments}) =>const SplashPage(),
 };

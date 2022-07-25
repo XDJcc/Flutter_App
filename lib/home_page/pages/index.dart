@@ -9,25 +9,30 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffafafa),
-      appBar: AppBar(
-        title: Text(
-          'XDJcc',
-          style: TextStyle(color: Colors.black),
-        ),
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-      ),
       body: Center(
         child: InkWell(
-          onTap: () {
-            print('aaaaaa');
-            Navigator.of(context).pushNamed('/splash');
-          },
-          child: Text('I am XDJcc'),
-        ),
+            onTap: () {
+              Navigator.of(context)
+                  .pushNamed('/splash', arguments: {'name': 'XDJcc'});
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text('I am XDJcc'),
+              ],
+            )),
       ),
     );
   }

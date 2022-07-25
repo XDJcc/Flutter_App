@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/global/global.dart';
 import 'package:study_flutter/app/router/index.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
+import 'package:study_flutter/splash_page/pages/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,9 +42,9 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'XDJ', 
-          navigatorKey: navigatorKey,   //
-          initialRoute: '/',   //初始化route
+          title: 'XDJ',
+          navigatorKey: navigatorKey, //
+          initialRoute: '/splash',   //初始化route
           onGenerateRoute: onGenerateRoute, //监听 routes
           builder: (context, child) {
             child = BotToastInit()(context, child); //初始化toast
@@ -51,12 +52,13 @@ class MyApp extends StatelessWidget {
           },
           theme: ThemeData(
             primarySwatch: Colors.teal,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp,bodyColor: ThemeColor.textBodyColor),
+            textTheme: Typography.englishLike2018.apply(
+                fontSizeFactor: 1.sp, bodyColor: ThemeColor.textBodyColor),
           ),
           home: child,
         );
       },
-      // child: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // child: const SplashPage({'name': 'zhangsan'}),
     );
   }
 }
