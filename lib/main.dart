@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:bot_toast/bot_toast.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/global/global.dart';
 import 'package:study_flutter/app/router/index.dart';
+import 'package:study_flutter/app/utils/themeData.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,67 +41,22 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          navigatorKey: navigatorKey,
-          initialRoute: '/',
-          onGenerateRoute: onGenerateRoute,
+          title: 'XDJ', 
+          navigatorKey: navigatorKey,   //
+          initialRoute: '/',   //初始化route
+          onGenerateRoute: onGenerateRoute, //监听 routes
+          builder: (context, child) {
+            child = BotToastInit()(context, child); //初始化toast
+            return child;
+          },
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            primarySwatch: Colors.teal,
+            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp,bodyColor: ThemeColor.textBodyColor),
           ),
           home: child,
         );
       },
-      child: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      _counter++;
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      // child: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
