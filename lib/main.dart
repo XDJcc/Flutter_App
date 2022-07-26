@@ -8,7 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/global/global.dart';
 import 'package:study_flutter/app/router/index.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/splash_page/pages/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,13 +16,14 @@ void main() async {
   GlobalData.cameras = await availableCameras();
 
   runApp(const MyApp());
-
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+  //     overlays: []);
   if (Platform.isAndroid) {
     //设置Android头部的导航栏透明
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, //全局设置透明
         statusBarIconBrightness: Brightness.dark
-        //light:黑色图标 dark：白色图标
+        //light:白色图标 dark：黑色图标
         //在此处设置statusBarIconBrightness为全局设置
         ));
   }
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'XDJ',
           navigatorKey: navigatorKey, //
-          initialRoute: '/splash',   //初始化route
+          initialRoute: '/splash', //初始化route
           onGenerateRoute: onGenerateRoute, //监听 routes
           builder: (context, child) {
             child = BotToastInit()(context, child); //初始化toast
