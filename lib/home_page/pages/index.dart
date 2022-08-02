@@ -17,15 +17,17 @@ class _HomeState extends State<Home> {
   void dispose() {
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('XDJ',),
+      ),
       body: Center(
         child: InkWell(
             onTap: () {
-              Navigator.of(context)
-                  .pushNamed('/splash', arguments: {'name': 'XDJcc'});
+              // Navigator.of(context)
+              //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

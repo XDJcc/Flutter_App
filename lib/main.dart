@@ -50,12 +50,8 @@ class MyApp extends StatelessWidget {
             child = BotToastInit()(context, child); //初始化toast
             return child;
           },
-          theme: ThemeData(
-            primarySwatch: Colors.teal,
-            textTheme: Typography.englishLike2018.apply(
-                fontSizeFactor: 1.sp, bodyColor: ThemeColor.textBodyColor),
-          ),
-          home: child,
+          theme: MeThemeData,
+          // home: child,
         );
       },
       // child: const SplashPage({'name': 'zhangsan'}),
