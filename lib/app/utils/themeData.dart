@@ -5,10 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ThemeColor {
   /* 元青 */
   static Color textBodyColor = const Color(0xff3e3c3d);
+  
   /* 蒂芙尼蓝 */
   static Color dfnBlue = const Color(0xff81d8d0);
+
   /* 纯白 */
   static Color pureWhite = const Color(0xfff5f2e9);
+
   /* 暗夜蓝 */
   static Color ayBlue = const Color(0xff0c112a);
 }

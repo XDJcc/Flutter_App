@@ -1,9 +1,14 @@
+/// create by XDJcc 2022-8-19
+/// contact me by email 2045659302@qq.com
+///说明：
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:study_flutter/app/router/uni_router.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/home_page/pages/index.dart';
+import 'package:study_flutter/home_page/pages/home.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -27,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
       count--;
       if (count == 0) {
         _timer?.cancel();
-        // _toHome();
+        _toHome();
       }
       setState(() {});
     });
@@ -35,9 +40,10 @@ class _SplashPageState extends State<SplashPage> {
 
   void _toHome() {
     _timer?.cancel();
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const Home()),
-        (route) => false);
+    // Navigator.of(context).pushAndRemoveUntil(
+    //     MaterialPageRoute(builder: (context) => const Home()),
+    //     (route) => false);
+    Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
   }
 
   @override

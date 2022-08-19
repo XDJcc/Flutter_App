@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+
 //缩放路由动画
 class ScaleRouter<T> extends PageRouteBuilder<T> {
   final Widget child;
@@ -233,3 +235,5 @@ class NoAnimRouter<T> extends PageRouteBuilder<T> {
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) => child);
 }
+
+
