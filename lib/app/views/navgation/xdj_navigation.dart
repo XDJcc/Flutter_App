@@ -72,14 +72,14 @@ class _NavgationPageState extends State<NavgationPage> {
               icon: const Icon(Icons.home),
               color: _currentPage == 0
                   ? ThemeColor.pureWhite
-                  : ThemeColor.textBodyColor,
+                  : ThemeColor.c_9,
               onPressed: () => _updateIndex(0),
             ),
             IconButton(
               icon: const Icon(Icons.people),
               color: _currentPage == 1
                   ? ThemeColor.pureWhite
-                  : ThemeColor.textBodyColor,
+                  : ThemeColor.c_9,
               onPressed: () => _updateIndex(1),
             )
           ],

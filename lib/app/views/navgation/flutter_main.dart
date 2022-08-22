@@ -1,6 +1,6 @@
 /// create by XDJcc 2022-8-19
 /// contact me by email 2045659302@qq.com
-///说明：组程序
+///说明：主程序
 
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';

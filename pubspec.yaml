@@ -35,7 +35,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2  #icon
   dio: 4.0.4  #请求
-  flutter_swiper_view: ^1.1.8 #Swiper
   flutter_staggered_grid_view: ^0.6.2 #flutter 网格布局  流式布局
   camera: ^0.10.0 #在小部件中显示实时相机预览
   images_picker: ^1.2.11 #读取相册图片
@@ -45,6 +44,9 @@ dependencies:
   bot_toast: ^4.0.1 #toast
   fluwx: ^3.9.0+2  #微信授权
   event_bus: ^2.0.0 # 全局事件总线
+  card_swiper: ^2.0.4 #card_swiper
+  bruno: ^3.0.0 #bruno UI框架
+  cached_network_image: ^3.2.1 #图片缓存
 
 dev_dependencies:
   flutter_test:

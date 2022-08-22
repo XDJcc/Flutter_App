@@ -10,7 +10,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:study_flutter/app/global/global.dart';
-import 'package:study_flutter/app/views/navgation/flutter_xdj.dart';
+import 'package:study_flutter/app/views/navgation/flutter_main.dart';
 
 
 void main() async {

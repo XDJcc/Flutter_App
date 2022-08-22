@@ -18,7 +18,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  int count = 3;
+  int count = 1;
   Timer? _timer;
 
   @override
