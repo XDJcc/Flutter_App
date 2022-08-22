@@ -4,7 +4,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:study_flutter/app/components/IAppbar.dart';
+import 'package:study_flutter/app/components/costomized/IAppbar.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({Key? key}) : super(key: key);

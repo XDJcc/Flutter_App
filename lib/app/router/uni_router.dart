@@ -19,16 +19,16 @@ class UnitRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case nav:
-        return Left2RightRouter(child: const NavgationPage());
+        return Right2LeftRouter(child: const NavgationPage());
       case home:
-        return Left2RightRouter(child: const HomePage());
+        return Right2LeftRouter(child: const HomePage());
 
       ///demo_list
       case demo_list:
-        return Left2RightRouter(child: const DemoListPage());
+        return Right2LeftRouter(child: const DemoListPage());
         
       case nested_scroll_view_demo:
-        return Left2RightRouter(child: const NestedScrollViewDemoPage());
+        return Right2LeftRouter(child: const NestedScrollViewDemoPage());
 
 
       ///界面不存在

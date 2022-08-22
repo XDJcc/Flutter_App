@@ -1,3 +1,6 @@
+/// create by XDJcc 2022-8-19
+/// contact me by email 2045659302@qq.com
+///说明：重写swipercontroller 添加自定义方法 tonext 自定义滚动方向
 import 'package:card_swiper/card_swiper.dart';
 
 class XccSwiperController extends SwiperController {

@@ -20,7 +20,8 @@ class ThemeColor {
   /* 浅驼色 */
   static Color lightCamel = const Color(0xffffd4a9);
 
-
+  ///Line-线的颜色
+  static Color colorLine = const Color(0xffeceeef);
 
 
   /* 999 */

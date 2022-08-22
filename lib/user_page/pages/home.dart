@@ -2,9 +2,9 @@
 /// contact me by email 2045659302@qq.com
 ///说明：
 
+
 import 'package:flutter/material.dart';
 import 'package:study_flutter/app/components/costomized/IAppbar.dart';
-import 'package:study_flutter/app/router/uni_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _HomeState extends State<HomePage> {
       appBar: IAppBar(
         child: AppBar(
           title: const Text(
-            'HomePage',
+            'XDJ',
           ),
         ),
       ),
@@ -39,12 +39,11 @@ class _HomeState extends State<HomePage> {
             onTap: () {
               // Navigator.of(context)
               //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
-              Navigator.of(context).pushNamed(UnitRouter.demo_list);
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Text('I am HomePage'),
+                Text('I am XDJcc'),
               ],
             )),
       ),

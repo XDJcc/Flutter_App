@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/components/IAppbar.dart';
+import 'package:study_flutter/app/components/costomized/IAppbar.dart';
 import 'package:study_flutter/app/router/uni_router.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
 
@@ -37,14 +37,12 @@ class _DemoListState extends State<DemoListPage> {
         ),
       ),
       body: Container(
-        height: 800.w,
-        width: 400.w,
+        color: ThemeColor.c_f5,
         child: ListView.builder(
-          itemCount: 1,
+          itemCount: 3,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-                // margin: EdgeInsets.all(20.w),
-                width: 100.w,
+                margin: EdgeInsets.fromLTRB(10.w,10.w,10.w,0),
                 height: 100.w,
                 decoration: BoxDecoration(
                   color: ThemeColor.c_ff,
