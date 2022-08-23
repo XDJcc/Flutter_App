@@ -21,12 +21,13 @@ class NestedScrollViewDemoPage extends StatefulWidget {
 
 class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
     with SingleTickerProviderStateMixin {
+
+
   TabController? tabController;
 
   final ScrollController scrollController = ScrollController();
 
   final XccSwiperController swiperController = XccSwiperController();
-
 
   bool is_show = false;
 
@@ -44,13 +45,21 @@ class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
     // ignore: todo
     // TODO: implement initState
     super.initState();
-    Future.delayed( Duration.zero, () {
+    Future.delayed(Duration.zero, () {
       _tabs.map((e) {
         goodsKeyMap[e] = GlobalKey();
       });
-      tabController =
-          TabController(initialIndex: 0, animationDuration: const Duration(milliseconds: 100),length: _tabs.length, vsync: this)
-            ..addListener(() {});
+      tabController = TabController(
+          initialIndex: 0,
+          // animationDuration: const Duration(milliseconds: 100),
+          length: _tabs.length,
+          vsync: this)
+        ..addListener(() {});
+      scrollController.addListener(() {
+        // log('scroll=>>>1:${scrollController.position}');
+        // log('scroll=>>>2:${scrollController.position.pixels}');
+        // log('scroll=>>>3:${scrollController.offset}');
+      });
       setState(() {
         is_show = true;
       });
@@ -130,14 +139,14 @@ class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
                                     Container(
                                       height: 237.w,
                                       width: double.infinity,
-                                      // child: CaCheImageWidget(
-                                      //   'https://img0.baidu.com/it/u=2272353480,4072896150&fm=253&fmt=auto&app=120&f=JPEG?',
-                                      //   fit: BoxFit.fill,
-                                      // ),
+                                      child: CaCheImageWidget(
+                                        'https://img0.baidu.com/it/u=2272353480,4072896150&fm=253&fmt=auto&app=120&f=JPEG?',
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                     BackdropFilter(
                                       filter: ImageFilter.blur(
-                                          sigmaX: 3, sigmaY: 3),
+                                          sigmaX: 10, sigmaY: 10),
                                       child: Container(
                                         color: Colors.white.withAlpha(0),
                                       ),
@@ -256,10 +265,12 @@ class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
   //     }).toList(),
   //   );
   // }
+  
   Widget _buildTabBarView() {
     return TabBarView(
       controller: tabController,
       children: _tabs.map((String name) {
+        debugPrint('$name');
         return GoodsDetailList(1, key: goodsKeyMap[name]);
       }).toList(),
     );

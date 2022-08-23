@@ -11,12 +11,11 @@ class GoodsDetailList extends StatefulWidget {
   const GoodsDetailList(
     this.activeCatId, {
     Key? key,
-  }) : super(key: key);
+  }):super(key: key);
 
   @override
   State<GoodsDetailList> createState() => _GoodsDetailListState();
 }
-
 class _GoodsDetailListState extends State<GoodsDetailList>
     with AutomaticKeepAliveClientMixin {
   static const loadingTag = "##loading##"; //表尾标记
@@ -123,9 +122,9 @@ class _GoodsDetailListState extends State<GoodsDetailList>
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return GoodsDetailCard(index);
+                      return  GoodsDetailCard(index);
                     },
-                    childCount: 20,
+                    childCount: 100,
                   ),
                 ),
               ],
@@ -157,7 +156,7 @@ class _GoodsDetailListState extends State<GoodsDetailList>
 
 class GoodsDetailCard extends StatefulWidget {
   final index;
-  GoodsDetailCard(this.index, {Key? key}) : super(key: key);
+  const GoodsDetailCard(this.index, {Key? key}) : super(key: key);
 
   @override
   State<GoodsDetailCard> createState() => _GoodsDetailCardState();
@@ -190,6 +189,7 @@ class _GoodsDetailCardState extends State<GoodsDetailCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text('$index'),
                       CaCheImageWidget(
                           'https://img2.baidu.com/it/u=3371268082,3224164670&fm=253&fmt=auto&app=138&f=PNG?',
                           width: 100.w,

@@ -39,7 +39,7 @@ class _DemoListState extends State<DemoListPage> {
       body: Container(
         color: ThemeColor.c_f5,
         child: ListView.builder(
-          itemCount: 3,
+          itemCount: 1,
           itemBuilder: (BuildContext context, int index) {
             return Container(
                 margin: EdgeInsets.fromLTRB(10.w,10.w,10.w,0),
