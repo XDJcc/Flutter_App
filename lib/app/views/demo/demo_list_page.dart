@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/components/costomized/IAppbar.dart';
 import 'package:study_flutter/app/router/uni_router.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
+import 'package:study_flutter/app/views/demo/models/demo_list_model.dart';
 
 class DemoListPage extends StatefulWidget {
   const DemoListPage({Key? key}) : super(key: key);
@@ -26,6 +27,17 @@ class _DemoListState extends State<DemoListPage> {
     super.dispose();
   }
 
+  final List<DemoListDetail> dateList = [
+    DemoListDetail.fromJson({
+      "title": 'NestedScrollViewDemoPage',
+      "pages": UnitRouter.nested_scroll_view_demo,
+    }),
+    DemoListDetail.fromJson({
+      "title": 'SliverPersistentHeaderDemoPage',
+      "pages": UnitRouter.sliver_persistent_header_demo_page,
+    }),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,22 +51,24 @@ class _DemoListState extends State<DemoListPage> {
       body: Container(
         color: ThemeColor.c_f5,
         child: ListView.builder(
-          itemCount: 1,
+          itemCount: dateList.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-                margin: EdgeInsets.fromLTRB(10.w,10.w,10.w,0),
+                margin: EdgeInsets.fromLTRB(10.w, 10.w, 10.w, 0),
                 height: 100.w,
                 decoration: BoxDecoration(
                   color: ThemeColor.c_ff,
                   borderRadius: BorderRadius.circular(8.w),
                 ),
                 child: Ink(
-                  child: InkWell(onTap: () {
-                    Navigator.of(context)
-                        .pushNamed(UnitRouter.nested_scroll_view_demo);
-                  }),
-                )
-                );
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(dateList[index].pages ?? '');
+                    },
+                    child: Center(child: Text(dateList[index].title ?? '')),
+                  ),
+                ));
           },
         ),
       ),

@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ThemeColor {
   /* 元青 */
   static Color textBodyColor = const Color(0xff3e3c3d);
-    /* 暗夜蓝 */
+  /* 暗夜蓝 */
   static Color ayBlue = const Color(0xff0c112a);
   /* 蒂芙尼蓝 */
   static Color dfnBlue = const Color(0xff81d8d0);
@@ -16,13 +16,11 @@ class ThemeColor {
   /* 纯白 */
   static Color pureWhite = const Color(0xfff5f2e9);
 
-
   /* 浅驼色 */
   static Color lightCamel = const Color(0xffffd4a9);
 
   ///Line-线的颜色
   static Color colorLine = const Color(0xffeceeef);
-
 
   /* 999 */
   static Color c_9 = const Color(0xff999999);
@@ -45,6 +43,7 @@ final ThemeData MeThemeData = ThemeData(
     elevation: 0,
     centerTitle: true,
   ),
-  textTheme: Typography.englishLike2018
-      .apply(fontSizeFactor: 1.sp, bodyColor: ThemeColor.ayBlue),
+  primarySwatch: Colors.blue,
+  visualDensity: VisualDensity.comfortable,
+  fontFamily: "PingFang",
 );

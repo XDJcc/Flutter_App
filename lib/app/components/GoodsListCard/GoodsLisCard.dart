@@ -115,7 +115,7 @@ class _GoodsDetailListState extends State<GoodsDetailList>
           builder: (BuildContext context) {
             return CustomScrollView(
               slivers: <Widget>[
-                SliverOverlapInjector(
+                 SliverOverlapInjector(
                   handle:
                       NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 ),
@@ -189,7 +189,6 @@ class _GoodsDetailCardState extends State<GoodsDetailCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('$index'),
                       CaCheImageWidget(
                           'https://img2.baidu.com/it/u=3371268082,3224164670&fm=253&fmt=auto&app=138&f=PNG?',
                           width: 100.w,
