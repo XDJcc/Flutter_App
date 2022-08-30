@@ -17,8 +17,7 @@ class LookForFlavorPage extends StatefulWidget {
   const LookForFlavorPage({Key? key}) : super(key: key);
 
   @override
-  State<LookForFlavorPage> createState() =>
-      _LookForFlavorPageState();
+  State<LookForFlavorPage> createState() => _LookForFlavorPageState();
 }
 
 class _LookForFlavorPageState extends State<LookForFlavorPage>
@@ -526,7 +525,7 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
     });
   }
 
-  onPageChange(int index, {PageController? p, TabController? t}) async {
+  void onPageChange(int index, {PageController? p, TabController? t}) async {
     if (p != null) {
       //判断是哪一个切换
       isPageCanChanged = false;
@@ -573,7 +572,7 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
     });
   }
 
-  _initGetSelectionList() {
+  void _initGetSelectionList() {
     for (var e in tagList) {
       tagList[tagList.indexOf(e)]['selection'] = false;
     }
@@ -588,201 +587,204 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double paddingTop = MediaQuery.of(context).padding.top;
-    return Container(
-      width: size.width,
-      height: size.height,
-      color: const Color(0xFF666666),
-      child: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            right: 0,
-            top: 0,
-            height: 400.w,
-            child: initBg(),
-          ),
-          Scaffold(
-              backgroundColor: Color.fromARGB(_opacity, 53, 56, 63),
-              appBar: PreferredSize(
-                preferredSize: Size(size.width, 50.w),
-                child: AppBar(
-                  backgroundColor: Colors.transparent,
-                  centerTitle: true,
-                  leading: InkWell(
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Image.asset(
-                      'assets/images/arrow_back.png',
-                      width: 24.w,
-                      height: 24.w,
+    return Scaffold(
+      body: Container(
+        width: size.width,
+        height: size.height,
+        color: const Color(0xFF666666),
+        child: Stack(
+          children: [
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 0,
+              height: 400.w,
+              child: initBg(),
+            ),
+            Scaffold(
+                backgroundColor: Color.fromARGB(_opacity, 53, 56, 63),
+                appBar: PreferredSize(
+                  preferredSize: Size(size.width, 50.w),
+                  child: AppBar(
+                    backgroundColor: Colors.transparent,
+                    centerTitle: true,
+                    leading: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Image.asset(
+                        'assets/images/arrow_back.png',
+                        width: 24.w,
+                        height: 24.w,
+                      ),
                     ),
-                  ),
-                  title: Text(
-                    '寻味特色',
-                    style: TextStyle(
-                      fontSize: 18.sp,
+                    title: Text(
+                      '寻味特色',
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                      ),
                     ),
+                    elevation: 0,
                   ),
-                  elevation: 0,
                 ),
-              ),
-              body: Stack(
-                children: [
-                  NotificationListener(
-                    onNotification: (ScrollNotification notification) {
-                      if (notification is ScrollStartNotification) {
-                        // print("开始滚动");
-                      } else if (notification is ScrollUpdateNotification) {
-                        // print("正在滚动。。。总滚动距离：${notification.metrics.pixels}");
-                        // print("正在滚动。。。总滚动距离：${140.w}");
+                body: Stack(
+                  children: [
+                    NotificationListener(
+                      onNotification: (ScrollNotification notification) {
+                        if (notification is ScrollStartNotification) {
+                          // print("开始滚动");
+                        } else if (notification is ScrollUpdateNotification) {
+                          // print("正在滚动。。。总滚动距离：${notification.metrics.pixels}");
+                          // print("正在滚动。。。总滚动距离：${140.w}");
 
-                        if (notification.metrics.pixels >= 140.w) {
-                          if (_isScrollTop != true) {
-                            setState(() {
-                              _isScrollTop = true;
-                            });
+                          if (notification.metrics.pixels >= 140.w) {
+                            if (_isScrollTop != true) {
+                              setState(() {
+                                _isScrollTop = true;
+                              });
+                            }
+                          } else {
+                            if (_isScrollTop != false) {
+                              setState(() {
+                                _isScrollTop = false;
+                              });
+                            }
                           }
-                        } else {
-                          if (_isScrollTop != false) {
-                            setState(() {
-                              _isScrollTop = false;
-                            });
-                          }
+                        } else if (notification is ScrollEndNotification) {
+                          // print("结束滚动");
                         }
-                      } else if (notification is ScrollEndNotification) {
-                        // print("结束滚动");
-                      }
 
-                      return true;
-                    },
-                    child: !_is_show
-                        ? const SizedBox()
-                        : NestedScrollView(
-                            controller: _pageScrollController,
-                            headerSliverBuilder: (BuildContext context,
-                                bool innerBoxIsScrolled) {
-                              return <Widget>[
-                                SliverToBoxAdapter(
-                                  child: initScroll(),
-                                ),
-                                SliverPersistentHeader(
-                                  pinned: true,
-                                  delegate: SliverDelegate(
-                                    extentHeight: 30.w,
-                                    // child: Container(),
-                                    child: initTopTabbar(),
+                        return true;
+                      },
+                      child: !_is_show
+                          ? const SizedBox()
+                          : NestedScrollView(
+                              controller: _pageScrollController,
+                              headerSliverBuilder: (BuildContext context,
+                                  bool innerBoxIsScrolled) {
+                                return <Widget>[
+                                  SliverToBoxAdapter(
+                                    child: initScroll(),
                                   ),
-                                ),
-                                SliverPersistentHeader(
-                                  pinned: true,
-                                  delegate: SliverDelegate(
-                                    extentHeight: 20.w,
-                                    child: initTabIconScroll(),
-                                  ),
-                                ),
-                                SliverPersistentHeader(
+                                  SliverPersistentHeader(
                                     pinned: true,
                                     delegate: SliverDelegate(
-                                        extentHeight: 44.w,
-                                        child: dropWapper())),
-                              ];
-                            },
-                            body: PageView.builder(
-                              controller: pageController,
-                              itemCount: _tab.length,
-                              onPageChanged: (index) {
-                                if (isPageCanChanged) {
-                                  //由于pageview切换是会回调这个方法,又会触发切换tabbar的操作,所以定义一个flag,控制pageview的回调
-                                  onPageChange(index);
-                                }
-                              },
-                              itemBuilder: (BuildContext context, int index) {
-                                return Container(
-                                  color: ThemeColor.c_f5,
-                                  child: ListView.builder(
-                                    itemCount: 40,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return const FlavorGoodsCard();
-                                    },
+                                      extentHeight: 30.w,
+                                      // child: Container(),
+                                      child: initTopTabbar(),
+                                    ),
                                   ),
-                                );
+                                  SliverPersistentHeader(
+                                    pinned: true,
+                                    delegate: SliverDelegate(
+                                      extentHeight: 20.w,
+                                      child: initTabIconScroll(),
+                                    ),
+                                  ),
+                                  SliverPersistentHeader(
+                                      pinned: true,
+                                      delegate: SliverDelegate(
+                                          extentHeight: 44.w,
+                                          child: dropWapper())),
+                                ];
                               },
+                              body: PageView.builder(
+                                controller: pageController,
+                                itemCount: _tab.length,
+                                physics:const BouncingScrollPhysics(),
+                                onPageChanged: (index) {
+                                  if (isPageCanChanged) {
+                                    //由于pageview切换是会回调这个方法,又会触发切换tabbar的操作,所以定义一个flag,控制pageview的回调
+                                    onPageChange(index);
+                                  }
+                                },
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Container(
+                                    color: ThemeColor.c_f5,
+                                    child: ListView.builder(
+                                      itemCount: 40,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return const FlavorGoodsCard();
+                                      },
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
-                          ),
-                  ),
-                ],
-              )),
-          showBootom
-              ? InkWell(
-                  onTap: () {
-                    // setState(() {
-                    //   showBootom = false;
-                    // });
-                    dropKey.currentState?.changeSelection(false);
-                  },
-                  child: SizedBox(
-                    width: size.width,
-                    height: size.height,
-                    child: Column(children: [
-                      SizedBox(
-                        width: size.width,
-                        height: paddingTop + 50.w + 50.w + 44.w,
-                      ),
-                      Expanded(
-                          child: Container(
-                        color: Colors.black.withOpacity(0.3),
-                      ))
-                    ]),
-                  ),
-                )
-              : Container(),
-          Offstage(
-            offstage: !(selectionId == 1),
-            child: AnimatedContainer(
-              margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
-              duration: const Duration(milliseconds: 300),
-              width: size.width,
-              height: showBootom ? 500.w : 0,
-              color: ThemeColor.c_ff,
-              child: showBootom ? _createTag() : const SizedBox(),
+                    ),
+                  ],
+                )),
+            showBootom
+                ? InkWell(
+                    onTap: () {
+                      // setState(() {
+                      //   showBootom = false;
+                      // });
+                      dropKey.currentState?.changeSelection(false);
+                    },
+                    child: SizedBox(
+                      width: size.width,
+                      height: size.height,
+                      child: Column(children: [
+                        SizedBox(
+                          width: size.width,
+                          height: paddingTop + 50.w + 50.w + 44.w,
+                        ),
+                        Expanded(
+                            child: Container(
+                          color: Colors.black.withOpacity(0.3),
+                        ))
+                      ]),
+                    ),
+                  )
+                : Container(),
+            Offstage(
+              offstage: !(selectionId == 1),
+              child: AnimatedContainer(
+                margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
+                duration: const Duration(milliseconds: 300),
+                width: size.width,
+                height: showBootom ? 500.w : 0,
+                color: ThemeColor.c_ff,
+                child: showBootom ? _createTag() : const SizedBox(),
+              ),
             ),
-          ),
-          Offstage(
-            offstage: !(selectionId == 2),
-            child: AnimatedContainer(
-              margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
-              duration: const Duration(milliseconds: 300),
-              width: size.width,
-              height: showBootom ? 500.w : 0,
-              color: ThemeColor.c_ff,
-              child: showBootom ? _createBrand() : const SizedBox(),
+            Offstage(
+              offstage: !(selectionId == 2),
+              child: AnimatedContainer(
+                margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
+                duration: const Duration(milliseconds: 300),
+                width: size.width,
+                height: showBootom ? 500.w : 0,
+                color: ThemeColor.c_ff,
+                child: showBootom ? _createBrand() : const SizedBox(),
+              ),
             ),
-          ),
-          Offstage(
-            offstage: !(selectionId == 3),
-            child: AnimatedContainer(
-              margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
-              duration: const Duration(milliseconds: 300),
-              width: size.width,
-              height: showBootom ? 500.w : 0,
-              color: ThemeColor.c_ff,
-              child: showBootom ? _createSelection() : const SizedBox(),
+            Offstage(
+              offstage: !(selectionId == 3),
+              child: AnimatedContainer(
+                margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
+                duration: const Duration(milliseconds: 300),
+                width: size.width,
+                height: showBootom ? 500.w : 0,
+                color: ThemeColor.c_ff,
+                child: showBootom ? _createSelection() : const SizedBox(),
+              ),
             ),
-          ),
-          Offstage(
-            offstage: !(selectionId == 4),
-            child: AnimatedContainer(
-              margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
-              duration: const Duration(milliseconds: 300),
-              width: size.width,
-              height: showBootom ? 500.w : 0,
-              color: ThemeColor.c_ff,
-              child: showBootom ? _createSort() : const SizedBox(),
+            Offstage(
+              offstage: !(selectionId == 4),
+              child: AnimatedContainer(
+                margin: EdgeInsets.only(top: paddingTop + 50.w + 50.w + 44.w),
+                duration: const Duration(milliseconds: 300),
+                width: size.width,
+                height: showBootom ? 500.w : 0,
+                color: ThemeColor.c_ff,
+                child: showBootom ? _createSort() : const SizedBox(),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -1025,7 +1027,6 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
                     setState(() {
                       tagList[tagList.indexOf(e)]['selection'] =
                           !tagList[tagList.indexOf(e)]['selection'];
-                      print(tagList[tagList.indexOf(e)]['selection']);
                     });
                   },
                   child: Container(
@@ -1037,7 +1038,7 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
                             ? const Color(0xFFFEF8ED)
                             : const Color(0xFFF0F3F6)),
                     child: Text(
-                      e['name'],
+                       e['name'],
                       style: TextStyle(
                         color: e['selection']
                             ? const Color(0xFFF28E1C)
@@ -1442,8 +1443,8 @@ class _FlavorGoodsCardState extends State<FlavorGoodsCard> {
                       ),
                       Text(
                         '好喝',
-                        style: TextStyle(
-                            fontSize: 14.sp, color: ThemeColor.c_9),
+                        style:
+                            TextStyle(fontSize: 14.sp, color: ThemeColor.c_9),
                       )
                     ],
                   ),
@@ -1463,8 +1464,8 @@ class _FlavorGoodsCardState extends State<FlavorGoodsCard> {
                       ),
                       Text(
                         '不好喝',
-                        style: TextStyle(
-                            fontSize: 14.sp, color: ThemeColor.c_9),
+                        style:
+                            TextStyle(fontSize: 14.sp, color: ThemeColor.c_9),
                       )
                     ],
                   ),
@@ -1480,8 +1481,8 @@ class _FlavorGoodsCardState extends State<FlavorGoodsCard> {
                       ),
                       Text(
                         '想试试',
-                        style: TextStyle(
-                            fontSize: 14.sp, color: ThemeColor.c_9),
+                        style:
+                            TextStyle(fontSize: 14.sp, color: ThemeColor.c_9),
                       )
                     ],
                   ),

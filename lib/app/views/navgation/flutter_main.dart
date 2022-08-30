@@ -25,12 +25,12 @@ class FlutterXdj extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           navigatorKey: navigatorKey, //
           // theme: ThemeData(fontFamily: 'pingfang'),
+          theme: MeThemeData,
           onGenerateRoute: UnitRouter.generateRoute, //监听 routes
           builder: (context, child) {
             child = BotToastInit()(context, child); //初始化toast
             return child;
           },
-          theme: MeThemeData,
           home: child,
         );
       },

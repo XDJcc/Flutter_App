@@ -43,7 +43,7 @@ final ThemeData MeThemeData = ThemeData(
     elevation: 0,
     centerTitle: true,
   ),
+  fontFamily:'pingfang',
   primarySwatch: Colors.blue,
   visualDensity: VisualDensity.comfortable,
-  fontFamily: "PingFang",
 );

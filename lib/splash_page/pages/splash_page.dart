@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/router/uni_router.dart';
@@ -50,6 +51,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     Size winSize = MediaQuery.of(context).size;
     double padding = MediaQuery.of(context).padding.top;
+    BrnInitializer.register();
     return Scaffold(
         body: Stack(
       children: [
