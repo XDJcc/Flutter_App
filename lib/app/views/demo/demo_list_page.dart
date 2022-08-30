@@ -36,6 +36,10 @@ class _DemoListState extends State<DemoListPage> {
       "title": 'SliverPersistentHeaderDemoPage',
       "pages": UnitRouter.sliver_persistent_header_demo_page,
     }),
+    DemoListDetail.fromJson({
+      "title": 'LookForFlavorPage',
+      "pages": UnitRouter.look_for_flavor_page,
+    }),
   ];
 
   @override

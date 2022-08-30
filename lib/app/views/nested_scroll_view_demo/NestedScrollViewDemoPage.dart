@@ -8,8 +8,9 @@ import 'package:study_flutter/app/components/GoodsListCard/GoodsLisCard.dart';
 import 'package:study_flutter/app/components/cached_network_image/cached_network_image.dart';
 import 'package:study_flutter/app/utils/Toasd.dart';
 import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/app/views/demo/nested_scroll_view_demo/components/square_swiper_pagination.dart';
-import 'package:study_flutter/app/views/demo/nested_scroll_view_demo/components/x_swiper_controller.dart';
+
+import 'components/square_swiper_pagination.dart';
+import 'components/x_swiper_controller.dart';
 
 class NestedScrollViewDemoPage extends StatefulWidget {
   const NestedScrollViewDemoPage({Key? key}) : super(key: key);
