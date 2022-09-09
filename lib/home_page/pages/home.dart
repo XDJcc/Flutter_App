@@ -3,6 +3,7 @@
 ///说明：
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:study_flutter/app/components/costomized/IAppbar.dart';
 import 'package:study_flutter/app/router/uni_router.dart';
 
@@ -34,19 +35,27 @@ class _HomeState extends State<HomePage> {
           ),
         ),
       ),
-      body: Center(
-        child: InkWell(
-            onTap: () {
-              // Navigator.of(context)
-              //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
-              Navigator.of(context).pushNamed(UnitRouter.demo_list);
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text('I am HomePage'),
-              ],
-            )),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: InkWell(
+              onTap: () {
+                // Navigator.of(context)
+                //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
+                Navigator.of(context).pushNamed(UnitRouter.demo_list);
+              },
+              child: SizedBox(
+                width: 100.w,
+                height: 100.w,
+                child: Text(
+                  'I am HomePage',
+                  style: TextStyle(fontSize: 16.sp),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

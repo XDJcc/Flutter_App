@@ -40,6 +40,10 @@ class _DemoListState extends State<DemoListPage> {
       "title": 'LookForFlavorPage',
       "pages": UnitRouter.look_for_flavor_page,
     }),
+    DemoListDetail.fromJson({
+      "title": 'NestedSliversPage',
+      "pages": UnitRouter.nested_slivers,
+    }),
   ];
 
   @override

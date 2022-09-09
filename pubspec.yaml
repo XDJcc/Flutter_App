@@ -47,6 +47,11 @@ dependencies:
   card_swiper: ^2.0.4 #card_swiper
   bruno: ^3.0.0 #bruno UI框架
   cached_network_image: ^3.2.1 #图片缓存
+  provider: ^6.0.3 # 状态管理工具
+  cookie_jar: 3.0.1  #cookie_jar
+  dio_cache_interceptor: ^3.3.1
+  dio_cookie_manager: ^2.0.0
+  path_provider: ^2.0.9
 
 
 dev_dependencies:
@@ -73,12 +78,12 @@ flutter:
     - family: myIcon
       fonts:
         - asset: assets/fonts/iconfont.ttf
-    - family: pingfang
-      fonts:
-        - asset: assets/fonts/pingfang/pingfang-Regular.ttf
-        - asset: assets/fonts/pingfang/pingfang-Bold.ttf
-          weight: 700
-    
+    #    - family: pingfang
+    #      fonts:
+    #        - asset: assets/fonts/pingfang/pingfang-Regular.ttf
+    #        - asset: assets/fonts/pingfang/pingfang-Bold.ttf
+    #          weight: 700
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
