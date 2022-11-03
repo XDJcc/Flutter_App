@@ -1,4 +1,4 @@
-name: study_flutter
+name: flutter_app
 description: XDJcc Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -49,9 +49,14 @@ dependencies:
   cached_network_image: ^3.2.1 #图片缓存
   provider: ^6.0.3 # 状态管理工具
   cookie_jar: 3.0.1  #cookie_jar
-  dio_cache_interceptor: ^3.3.1
-  dio_cookie_manager: ^2.0.0
-  path_provider: ^2.0.9
+  dio_cookie_manager: ^2.0.0 #提供一个 cookie 管理器
+  dio_cache_interceptor: ^3.3.1 # 缓存拦截器 lru算法缓存拦截库
+  path_provider: ^2.0.9 #临时目录 文档目录
+  json_annotation: ^4.4.0 #序列化 反序列化
+  shared_preferences: ^2.0.13 #本地存储
+  device_info_plus: ^3.2.3 #设备信息
+  package_info_plus: ^1.4.2  #App相关信息 and  手机信息
+  intl: ^0.17.0 #国际化和本地化功能，包括消息翻译、复数和性别、日期/数字格式和解析以及双向文本
 
 
 dev_dependencies:

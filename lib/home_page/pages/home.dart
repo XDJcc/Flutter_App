@@ -4,8 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/components/costomized/IAppbar.dart';
-import 'package:study_flutter/app/router/uni_router.dart';
+import 'package:flutter_app/app/components/costomized/IAppbar.dart';
+import 'package:flutter_app/app/router/uni_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,14 +43,17 @@ class _HomeState extends State<HomePage> {
               onTap: () {
                 // Navigator.of(context)
                 //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
-                Navigator.of(context).pushNamed(UnitRouter.demo_list);
+                // Navigator.of(context).pushNamed(UnitRouter.demo_list);
+                Navigator.of(context).pushNamed(UnitRouter.login);
               },
               child: SizedBox(
                 width: 100.w,
                 height: 100.w,
-                child: Text(
-                  'I am HomePage',
-                  style: TextStyle(fontSize: 16.sp),
+                child: Center(
+                  child: Text(
+                    'I am HomePage',
+                    style: TextStyle(fontSize: 16.sp),
+                  ),
                 ),
               ),
             ),

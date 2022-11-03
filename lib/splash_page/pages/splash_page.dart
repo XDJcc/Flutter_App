@@ -7,9 +7,9 @@ import 'dart:async';
 import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/router/uni_router.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/home_page/pages/home.dart';
+import 'package:flutter_app/app/router/uni_router.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
+import 'package:flutter_app/home_page/pages/home.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

@@ -2,20 +2,21 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/components/bruno_extend/x_brn_expand_able_text.dart';
-import 'package:study_flutter/app/components/cached_network_image/cached_network_image.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
+import 'package:flutter_app/app/components/bruno_extend/x_brn_expand_able_text.dart';
+import 'package:flutter_app/app/components/cached_network_image/cached_network_image.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
 
 class GoodsDetailList extends StatefulWidget {
   final int activeCatId; //当前选择的栏目ID
   const GoodsDetailList(
     this.activeCatId, {
     Key? key,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
   State<GoodsDetailList> createState() => _GoodsDetailListState();
 }
+
 class _GoodsDetailListState extends State<GoodsDetailList>
     with AutomaticKeepAliveClientMixin {
   static const loadingTag = "##loading##"; //表尾标记
@@ -115,14 +116,14 @@ class _GoodsDetailListState extends State<GoodsDetailList>
           builder: (BuildContext context) {
             return CustomScrollView(
               slivers: <Widget>[
-                 SliverOverlapInjector(
+                SliverOverlapInjector(
                   handle:
                       NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return  GoodsDetailCard(index);
+                      return GoodsDetailCard(index);
                     },
                     childCount: 100,
                   ),

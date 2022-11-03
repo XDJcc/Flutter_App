@@ -52,7 +52,7 @@ android {
     defaultConfig {
         minSdkVersion 21 
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.study_flutter"
+        applicationId "com.example.flutter_app"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
         targetSdkVersion flutter.targetSdkVersion

@@ -1,8 +1,8 @@
 //命名路由传参的固定写法
 
 import 'package:flutter/material.dart';
-import 'package:study_flutter/app/router/XDJ/route_utils.dart';
-import 'package:study_flutter/app/router/XDJ/router.dart';
+import 'package:flutter_app/app/router/XDJ/route_utils.dart';
+import 'package:flutter_app/app/router/XDJ/router.dart';
 
 ///
 /// 路由拦截器

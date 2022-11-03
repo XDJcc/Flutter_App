@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/app/router/uni_router.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/home_page/pages/home.dart';
-import 'package:study_flutter/user_page/pages/user_page.dart';
+import 'package:flutter_app/app/router/uni_router.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
+import 'package:flutter_app/home_page/pages/home.dart';
+import 'package:flutter_app/user_page/pages/user_page.dart';
 
 class NavgationPage extends StatefulWidget {
   const NavgationPage({Key? key}) : super(key: key);
@@ -70,16 +70,12 @@ class _NavgationPageState extends State<NavgationPage> {
           children: <Widget>[
             IconButton(
               icon: const Icon(Icons.home),
-              color: _currentPage == 0
-                  ? ThemeColor.pureWhite
-                  : ThemeColor.c_9,
+              color: _currentPage == 0 ? ThemeColor.pureWhite : ThemeColor.c_9,
               onPressed: () => _updateIndex(0),
             ),
             IconButton(
               icon: const Icon(Icons.people),
-              color: _currentPage == 1
-                  ? ThemeColor.pureWhite
-                  : ThemeColor.c_9,
+              color: _currentPage == 1 ? ThemeColor.pureWhite : ThemeColor.c_9,
               onPressed: () => _updateIndex(1),
             )
           ],

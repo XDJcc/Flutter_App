@@ -67,7 +67,8 @@ class DioRequest {
             responseType: ResponseType.json);
 
     final logInterceptor =
-    LogInterceptor(responseHeader: false, requestBody: true);
+    LogInterceptor(request:false,requestHeader: false, requestBody: false,responseHeader:false,);
+
 
     final cacheOptions = CacheOptions(
         store: MemCacheStore(),

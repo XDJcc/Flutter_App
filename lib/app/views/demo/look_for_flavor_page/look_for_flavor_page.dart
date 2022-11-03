@@ -7,9 +7,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/components/back_drop/back_drop.dart';
-import 'package:study_flutter/app/components/cached_network_image/cached_network_image.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
+import 'package:flutter_app/app/components/back_drop/back_drop.dart';
+import 'package:flutter_app/app/components/cached_network_image/cached_network_image.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
 
 import 'drop_down.dart';
 
@@ -691,7 +691,7 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
                               body: PageView.builder(
                                 controller: pageController,
                                 itemCount: _tab.length,
-                                physics:const BouncingScrollPhysics(),
+                                physics: const BouncingScrollPhysics(),
                                 onPageChanged: (index) {
                                   if (isPageCanChanged) {
                                     //由于pageview切换是会回调这个方法,又会触发切换tabbar的操作,所以定义一个flag,控制pageview的回调
@@ -1038,7 +1038,7 @@ class _LookForFlavorPageState extends State<LookForFlavorPage>
                             ? const Color(0xFFFEF8ED)
                             : const Color(0xFFF0F3F6)),
                     child: Text(
-                       e['name'],
+                      e['name'],
                       style: TextStyle(
                         color: e['selection']
                             ? const Color(0xFFF28E1C)

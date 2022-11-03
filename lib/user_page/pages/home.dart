@@ -2,9 +2,8 @@
 /// contact me by email 2045659302@qq.com
 ///说明：
 
-
 import 'package:flutter/material.dart';
-import 'package:study_flutter/app/components/costomized/IAppbar.dart';
+import 'package:flutter_app/app/components/costomized/IAppbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

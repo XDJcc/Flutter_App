@@ -4,10 +4,10 @@ import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/components/GoodsListCard/GoodsLisCard.dart';
-import 'package:study_flutter/app/components/cached_network_image/cached_network_image.dart';
-import 'package:study_flutter/app/utils/Toasd.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
+import 'package:flutter_app/app/components/GoodsListCard/GoodsLisCard.dart';
+import 'package:flutter_app/app/components/cached_network_image/cached_network_image.dart';
+import 'package:flutter_app/app/utils/Toasd.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
 
 import 'components/square_swiper_pagination.dart';
 import 'components/x_swiper_controller.dart';
@@ -22,8 +22,6 @@ class NestedScrollViewDemoPage extends StatefulWidget {
 
 class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
     with SingleTickerProviderStateMixin {
-
-
   TabController? tabController;
 
   final ScrollController scrollController = ScrollController();
@@ -266,7 +264,7 @@ class _NestedScrollViewDemoPageState extends State<NestedScrollViewDemoPage>
   //     }).toList(),
   //   );
   // }
-  
+
   Widget _buildTabBarView() {
     return TabBarView(
       controller: tabController,

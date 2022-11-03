@@ -1,19 +1,17 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:fluwx/fluwx.dart';
-import 'package:study_flutter/app/config/config.dart';
-
+import 'package:flutter_app/app/config/config.dart';
 
 class WxSdk {
   // static bool wxIsInstalled;
   static Future init() async {
     registerWxApi(
-        appId: Config.APPID,
-        doOnAndroid: true,
-        doOnIOS: true,
-        universalLink: Config.universalLink,
-      );
-  
+      appId: Config.APPID,
+      doOnAndroid: true,
+      doOnIOS: true,
+      universalLink: Config.universalLink,
+    );
   }
 
   static Future<bool> wxIsInstalled() async {
@@ -66,7 +64,7 @@ class WxSdk {
       wxScene = WeChatScene.FAVORITE;
     }
     WeChatShareTextModel model =
-       WeChatShareTextModel(content, title: title, scene: wxScene);
+        WeChatShareTextModel(content, title: title, scene: wxScene);
     shareToWeChat(model);
   }
 
@@ -110,8 +108,7 @@ class WxSdk {
       String? desc,
       int scene = 1,
       String? networkThumb,
-      String? assetThumb
-    }) {
+      String? assetThumb}) {
     desc = desc ?? "";
     title = title ?? "";
     if (desc.length > 54) {

@@ -12,17 +12,17 @@ class XToast {
     message, {
     String? position,
   }) {
-    var _align = Alignment.center;
+    var align = Alignment.center;
     if (position == "top") {
-      _align = const Alignment(0, -0.8);
+      align = const Alignment(0, -0.8);
     } else if (position == "bottom") {
-      _align = const Alignment(0, 0.8);
+      align = const Alignment(0, 0.8);
     }
     BotToast.showText(
       text: message,
       contentColor: const Color(0xBF000000),
       textStyle: TextStyle(fontSize: 16.sp, color: Colors.white),
-      align: _align,
+      align: align,
       contentPadding: EdgeInsets.fromLTRB(22.w, 10.w, 22.w, 10.w),
       borderRadius: BorderRadius.circular(50.w),
       duration: const Duration(seconds: 3),

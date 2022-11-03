@@ -5,9 +5,9 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:study_flutter/app/router/uni_router.dart';
-import 'package:study_flutter/app/utils/themeData.dart';
-import 'package:study_flutter/splash_page/pages/splash_page.dart';
+import 'package:flutter_app/app/router/uni_router.dart';
+import 'package:flutter_app/app/utils/themeData.dart';
+import 'package:flutter_app/splash_page/pages/splash_page.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
