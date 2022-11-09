@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app/router/uni_router.dart';
 import 'package:flutter_app/app/utils/themeData.dart';
-import 'package:flutter_app/home_page/pages/home.dart';
+import 'package:flutter_app/home_page/home.dart';
 import 'package:flutter_app/user_page/pages/user_page.dart';
 
 class NavgationPage extends StatefulWidget {

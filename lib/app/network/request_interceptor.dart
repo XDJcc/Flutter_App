@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_app/app/global/sp_utils.dart';
+import 'package:flutter_app/app/router/uni_router.dart';
 import 'package:flutter_app/app/utils/Toasd.dart';
+import 'package:flutter_app/navgation/flutter_main.dart';
 
 const kTokenKey = 'Authorization';
 
@@ -38,7 +40,6 @@ class NetworkInterceptors extends InterceptorsWrapper {
   @override
   Future<void> onResponse(
       Response response, ResponseInterceptorHandler handler) async {
-
     if (response.statusCode == 200) {
       //访问正确有返回值的情况
       response.statusCode = response.data['code'];
@@ -50,6 +51,7 @@ class NetworkInterceptors extends InterceptorsWrapper {
       } else if (response.data['code'] == 401) {
         /* 跳转到登录页面 */
         XToast.toastShow('请前往登陆界面登陆账号');
+        navigatorKey.currentState?.pushNamed(UnitRouter.login);
       } else if (response.data['code'] == 500) {
         /* 跳转到登录页面 */
         String msg = response.data['msg'];

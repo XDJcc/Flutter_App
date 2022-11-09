@@ -3,30 +3,24 @@
 ///说明：
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app/ui/base_page.dart';
+import 'package:flutter_app/home_page/home_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/app/components/costomized/IAppbar.dart';
 import 'package:flutter_app/app/router/uni_router.dart';
+import 'package:provider/provider.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends BasePage<HomeController> {
+  const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomeState();
-}
-
-class _HomeState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
+  HomeController create(BuildContext context) {
+    return HomeController();
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget buildWidget(BuildContext context, HomeController controller) {
+    HomeController c = context.read<HomeController>();
     return Scaffold(
       appBar: IAppBar(
         child: AppBar(
@@ -43,8 +37,8 @@ class _HomeState extends State<HomePage> {
               onTap: () {
                 // Navigator.of(context)
                 //     .pushNamed('/splash', arguments: {'name': 'XDJcc'});
-                // Navigator.of(context).pushNamed(UnitRouter.demo_list);
-                Navigator.of(context).pushNamed(UnitRouter.login);
+                Navigator.of(context).pushNamed(UnitRouter.demo_list);
+                // Navigator.of(context).pushNamed(UnitRouter.login);
               },
               child: SizedBox(
                 width: 100.w,

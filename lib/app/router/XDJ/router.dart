@@ -1,4 +1,4 @@
-import 'package:flutter_app/home_page/pages/home.dart';
+import 'package:flutter_app/home_page/home.dart';
 import 'package:flutter_app/splash_page/pages/splash_page.dart';
 
 /* 

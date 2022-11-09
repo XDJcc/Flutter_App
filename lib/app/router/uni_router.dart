@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app/router/unit_router_utils.dart';
 import 'package:flutter_app/app/views/demo/demo_list_page.dart';
-import 'package:flutter_app/home_page/pages/home.dart';
+import 'package:flutter_app/home_page/home.dart';
 import 'package:flutter_app/navgation/xdj_navigation.dart';
 
 import '../../login_page/login_page.dart';

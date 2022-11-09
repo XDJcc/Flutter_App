@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_app/app/global/global.dart';
 import 'package:flutter_app/app/global/sp_utils.dart';
 import 'package:flutter_app/app/models/user_info_model.dart';
@@ -27,20 +28,25 @@ class LoginController extends BaseController {
 
   void inputSubmitted(String val) {}
 
-  void login() async {
-    // if (phoneNumber.length != 11 || verificationCode.length != 6) {
-    //   XToast.toastShow('帐号错误，请稍后重试');
-    //   return;
-    // }
+  Future<bool> login() async {
+    if (phoneNumber.length != 11 || verificationCode.length != 6) {
+      XToast.toastShow('帐号或者密码错误，请重试');
+      return false;
+    }
     SPUtils.remove(kTokenKey);
     var res = await LoginRequest.sendVerificationCode(phoneNumber);
     XccLog.write(res);
-    // await Future.delayed(const Duration(seconds: 1));
-    // var data = await LoginRequest.userLogin(phoneNumber, verificationCode);
-    // UserInfo userInfo = UserInfo.fromJson(data['data']);
-    //
-    // SPUtils.putString(kTokenKey, userInfo.token);
-    // GlobalData.userId = userInfo.id;
-    // GlobalData.userInfo = userInfo;
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await LoginRequest.userLogin(phoneNumber, verificationCode);
+    UserInfo userInfo = UserInfo.fromJson(data['data']);
+    SPUtils.putString(kTokenKey, userInfo.token);
+    GlobalData.userId = userInfo.id;
+    GlobalData.userInfo = userInfo;
+    if (data['code'] == 200) {
+      return true;
+    } else {
+      XToast.toastShow('网络错误，请稍后重试');
+      return false;
+    }
   }
 }

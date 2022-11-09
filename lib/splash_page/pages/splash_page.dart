@@ -6,10 +6,12 @@ import 'dart:async';
 
 import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app/global/sp_utils.dart';
+import 'package:flutter_app/app/netWork/request_interceptor.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_app/app/router/uni_router.dart';
 import 'package:flutter_app/app/utils/themeData.dart';
-import 'package:flutter_app/home_page/pages/home.dart';
+import 'package:flutter_app/home_page/home.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -44,7 +46,11 @@ class _SplashPageState extends State<SplashPage> {
     // Navigator.of(context).pushAndRemoveUntil(
     //     MaterialPageRoute(builder: (context) => const Home()),
     //     (route) => false);
-    Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+    if (SPUtils.getString(kTokenKey) == null) {
+      Navigator.of(context).pushReplacementNamed(UnitRouter.login);
+    } else {
+      Navigator.of(context).pushReplacementNamed(UnitRouter.nav);
+    }
   }
 
   @override
